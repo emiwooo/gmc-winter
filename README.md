@@ -1,1 +1,18 @@
-test
+- [ ] text display
+    - [ ] text manager
+    - [ ] ending screen; can be pretty static i think
+    - [ ] buttons
+    - [ ] display past choices
+    - [ ] scroll
+    maybe every change of location means refreshing the text?
+- [ ] many bg images
+- [ ] image transition animation
+- [ ] take care of pet. feed groom play
+    - [ ] art associated with this
+- [ ] dynamic text speed would be fun
+- [ ] inventory tracker
+- [ ] ending tracker
+- [ ] sound manager
+    - [ ] sfx
+    - [ ] music from wife
+- settings (audio, maybe text speed)
