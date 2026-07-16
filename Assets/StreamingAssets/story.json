@@ -2,26 +2,29 @@
     "nodes": [
         {
             "id": "1",
+            "location": "location1",
             "text": "very good story",
             "image": "insert image path here",
             "choices": [
                 {
                     "text": "choice 1",
-                    "nextNodeId": "2"
+                    "targetNodeId": "2"
                 },
                 {
                     "text": "choice 2",
-                    "nextNodeId": "3"
+                    "targetNodeId": "3"
                 }
             ]
         },
         {
             "id": "2",
+            "location": "location1",
             "text": "this is the second node",
             "image": "insert image path here"
         },
         {
             "id": "3",
+            "location": "location2",
             "text": "this is the third node",
             "image": "insert image path here"
         }

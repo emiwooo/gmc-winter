@@ -14,6 +14,7 @@ using System.IO;
     [System.Serializable]
     public class DialogueNode {
         public string id;
+        public string location;
         public string text;
         public string image;
         public List<ChoiceData> choices;
@@ -26,6 +27,7 @@ using System.IO;
 
 public class TextManager : MonoBehaviour
 {
+    public ScrollRect scrollRect;
     public Image imageDisplay;
     public Transform choicePanelContainer;
     public GameObject choiceButtonPrefab;
@@ -37,6 +39,8 @@ public class TextManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private string fullText;
     private bool isTyping = false;
+    private List<string> history = new List<string>();
+    private string currentLocation = "";
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -64,13 +68,20 @@ public class TextManager : MonoBehaviour
     {
         if (!storyMap.ContainsKey(nodeId)) return;
 
-        currentNode = storyMap[nodeId];        
-        ClearChoices(); // for each run
+        currentNode = storyMap[nodeId];
+        StartCoroutine(ClearChoicesNextFrame());
 
         Sprite newBG = Resources.Load<Sprite>(currentNode.image);
         if (newBG != null)
         {
             imageDisplay.sprite = newBG;
+        }
+
+        if (currentNode.location != currentLocation)
+        {
+            history.Clear();
+            RefreshHistory(); 
+            currentLocation = currentNode.location;
         }
 
         fullText = currentNode.text;
@@ -84,25 +95,28 @@ public class TextManager : MonoBehaviour
         
     }
 
-    public void DisplayText(string currText)
-    {
-        fullText = currText;
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine);
-        }
-        typingCoroutine = StartCoroutine(TypeText());
-    }
-
     private IEnumerator TypeText()
     {
         isTyping = true;
-        text.text = "";
-        foreach (char letter in fullText.ToCharArray())
+        string typed = "";
+        foreach(char c in currentNode.text)
         {
-            text.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            typed += c;
+            text.text = string.Join("\n", history);
+            if (history.Count > 0)
+            {
+                text.text += "\n";
+            } 
+            text.text += typed;
+
+            Canvas.ForceUpdateCanvases();
+            scrollRect.verticalNormalizedPosition = 0;
+        
+            yield return new WaitForSeconds(textSpeed);    
         }
+        history.Add(currentNode.text);
+        RefreshHistory();
+
         isTyping = false;
         GenerateChoiceButtons();
     }
@@ -116,10 +130,17 @@ public class TextManager : MonoBehaviour
             GameObject buttonObj = Instantiate(choiceButtonPrefab, choicePanelContainer);
             TextMeshProUGUI buttonText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = choice.text;
-
             Button button = buttonObj.GetComponent<Button>();
+
             string targetNodeId = choice.targetNodeId;
-            button.onClick.AddListener(() => DisplayNode(targetNodeId));
+            string chosenText = choice.text;
+
+            button.onClick.AddListener(() =>   
+            {
+                history.Add($"<color=#808080><b>> {chosenText}</b></color>");
+                RefreshHistory();
+                DisplayNode(targetNodeId);
+            });
         }
     }
 
@@ -128,21 +149,34 @@ public class TextManager : MonoBehaviour
         DisplayNode(targetNodeId);
     }
 
-    void ClearChoices()
+    private IEnumerator ClearChoicesNextFrame()
     {
+        yield return null;
+
         foreach (Transform child in choicePanelContainer)
         {
             Destroy(child.gameObject);
         }
     }
-
     public void SkipTyping()
     {
         if (isTyping)
         {
             StopCoroutine(typingCoroutine);
-            text.text = fullText;
             isTyping = false;
+            history.Add(currentNode.text);
+            RefreshHistory();
+            GenerateChoiceButtons();
         }
+    }
+
+    private void RefreshHistory()
+    {
+        text.text = string.Join("\n", history);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            text.rectTransform
+        );
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 0;
     }
 }

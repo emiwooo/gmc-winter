@@ -1,9 +1,11 @@
 - [ ] text display
-    - [ ] text manager
+    - [X] text manager
     - [ ] ending screen; can be pretty static i think
-    - [ ] buttons
-    - [ ] display past choices
-    - [ ] scroll
+    - [X] buttons
+    - [X] display past choices
+    - [X] scroll
+    - [ ] UI elements
+    - [ ] click to skip text
     maybe every change of location means refreshing the text?
 - [ ] many bg images
 - [ ] image transition animation
