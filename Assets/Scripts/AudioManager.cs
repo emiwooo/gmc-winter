@@ -5,11 +5,22 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
     // all the sounds!!!!!!
+    [Header("UI Sounds")]
     [SerializeField] AudioClip typing1;
     [SerializeField] AudioClip typing2;
     [SerializeField] AudioClip typing3;
     [SerializeField] AudioClip click;
+
+    [Header("Wolf Sounds")]
+    [SerializeField] AudioClip bark;
+    [SerializeField] AudioClip growl;
+    [SerializeField] AudioClip whine;
+    [SerializeField] AudioClip feed;
+    [SerializeField] AudioClip brush;
+
+    [Header("Music")]
     [SerializeField] AudioClip bgm1;
+
     [SerializeField] AudioSource audioSource;
 
 
@@ -60,5 +71,37 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = bgm1;
         audioSource.loop = true;
         audioSource.Play();
+    }
+
+    public void PlaySound(string soundName)
+    {
+        AudioClip clipToPlay = null;
+
+        switch (soundName)
+        {
+            case "bark":
+                clipToPlay = bark;
+                break;
+            case "growl":
+                clipToPlay = growl;
+                break;
+            case "whine":
+                clipToPlay = whine;
+                break;
+            case "feed":
+                clipToPlay = feed;
+                break;
+            case "brush":
+                clipToPlay = brush;
+                break;
+            default:
+                Debug.LogWarning("Sound not found: " + soundName);
+                return;
+        }
+
+        if (clipToPlay != null)
+        {
+            audioSource.PlayOneShot(clipToPlay);
+        }
     }
 }

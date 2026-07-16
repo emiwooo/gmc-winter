@@ -27,6 +27,7 @@ using System.IO;
 
 public class TextManager : MonoBehaviour
 {
+    public AudioManager audioManager;
     public ScrollRect scrollRect;
     public Image imageDisplay;
     public Transform choicePanelContainer;
@@ -102,6 +103,7 @@ public class TextManager : MonoBehaviour
         foreach(char c in currentNode.text)
         {
             typed += c;
+            audioManager.PlayTypingSound();
             text.text = string.Join("\n", history);
             if (history.Count > 0)
             {
@@ -178,5 +180,12 @@ public class TextManager : MonoBehaviour
         );
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 0;
+    }
+
+    public void Reset()
+    {
+        history.Clear();
+        currentLocation = "";
+        RefreshHistory();
     }
 }
