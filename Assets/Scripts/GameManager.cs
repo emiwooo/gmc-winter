@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
         Ending,
         PetCare,
         EndingsArchive,
-        Inventory
+        Settings
     }
 
     // housekeeping
@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
 
     // game logic stuff
     public List<int> unlockedEndings = new List<int>();
-    public List<string> inventory = new List<string>();
+    public int morality = 0;
+    public int daysNo = 1;
+    public bool hasBranch = false;
+    public bool hasCharm = false;
 
 
     // panels
@@ -30,14 +33,17 @@ public class GameManager : MonoBehaviour
     public GameObject gameplayPanel;
     public GameObject endingPanel;
     public GameObject petCarePanel;
+    public GameObject settingsPanel;
     public GameObject endingsArchivePanel;
-    public GameObject inventoryPanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("GameManager Start");
         Instance = this;
-        CurrentState = GameState.MainMenu;
+//        CurrentState = GameState.MainMenu;
+        CurrentState = GameState.Playing;
+        UpdateUI(CurrentState);
     }
 
     // Update is called once per frame
@@ -50,7 +56,10 @@ public class GameManager : MonoBehaviour
     {
         wolf.Reset();
         textManager.Reset();
-        inventory.Clear();
+        morality = 0;
+        daysNo = 1;
+        hasBranch = false;
+        hasCharm = false;
     }
 
     public void AddEnding(int endingId)
@@ -58,14 +67,6 @@ public class GameManager : MonoBehaviour
         if (!unlockedEndings.Contains(endingId))
         {
             unlockedEndings.Add(endingId);
-        }
-    }
-
-    public void AddToInventory(string item)
-    {
-        if (!inventory.Contains(item))
-        {
-            inventory.Add(item);
         }
     }
 
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
         if (endingPanel) endingPanel.SetActive(false);
         if (petCarePanel) petCarePanel.SetActive(false);
         if (endingsArchivePanel) endingsArchivePanel.SetActive(false);
-        if (inventoryPanel) inventoryPanel.SetActive(false);
+        if (settingsPanel) settingsPanel.SetActive(false);
 
         // enable the relevant panel based on the current state
         switch (state)
@@ -109,8 +110,8 @@ public class GameManager : MonoBehaviour
             case GameState.EndingsArchive:
                 if (endingsArchivePanel) endingsArchivePanel.SetActive(true);
                 break;
-            case GameState.Inventory:
-                if (inventoryPanel) inventoryPanel.SetActive(true);
+            case GameState.Settings:
+                if (settingsPanel) settingsPanel.SetActive(true);
                 break;
         }
     }

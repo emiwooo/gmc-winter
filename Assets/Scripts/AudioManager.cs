@@ -15,8 +15,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip bark;
     [SerializeField] AudioClip growl;
     [SerializeField] AudioClip whine;
-    [SerializeField] AudioClip feed;
-    [SerializeField] AudioClip brush;
 
     [Header("Music")]
     [SerializeField] AudioClip bgm1;
@@ -87,12 +85,6 @@ public class AudioManager : MonoBehaviour
                 break;
             case "whine":
                 clipToPlay = whine;
-                break;
-            case "feed":
-                clipToPlay = feed;
-                break;
-            case "brush":
-                clipToPlay = brush;
                 break;
             default:
                 Debug.LogWarning("Sound not found: " + soundName);

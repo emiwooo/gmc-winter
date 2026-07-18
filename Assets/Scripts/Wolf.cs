@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wolf : MonoBehaviour
 {
     public AudioManager audioManager;
-    public float hunger = 100f;
-    public float hygiene = 100f;
-    public float training = 20f;
+    public float hunger = 80f;
+    public float affection = 0f;
+
+    public Image smallDog;
+    public Image mediumDog;
+    public Image largeDogEvil;
+    public Image largeDogGood;
+
+    public StatsBar hungerBar;
+    public StatsBar affectionBar;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,9 +29,8 @@ public class Wolf : MonoBehaviour
 
     public void Reset()
     {
-        hunger = 100f;
-        hygiene = 100f;
-        training = 20f;
+        hunger = 80f;
+        affection = 0f;
     }
 
     public void Feed()
@@ -31,20 +39,9 @@ public class Wolf : MonoBehaviour
         audioManager.PlaySound("feed");
     }
 
-    public void Groom()
-    {
-        hygiene = Mathf.Min(hygiene + 20f, 100f);
-        audioManager.PlaySound("brush");
-    }
-
-    public void Train()
-    {
-        training = Mathf.Min(training + 20f, 100f);
-        audioManager.PlaySound("bark");
-    }
-
     public void Pet()
     {
+        affection = Mathf.Min(affection + 1f, 100f);
         audioManager.PlaySound("bark");
     }
 
