@@ -1,68 +1,291 @@
 {
-    "nodes": [
+  "nodes": [
+    {
+      "id": "INTRO-A",
+      "location": "woods",
+      "text": "Once upon a time, there was a young girl that lived in the woods. She had a name, of course, but most people only remembered her by the Red of her riding hood.\n\nYou are Red.",
+      "image": "red",
+      "choices": [
         {
-            "id": "INTRO-A",
-            "location": "woods",
-            "text": "Once upon a time, there was a young girl that lived in the woods. She had a name, of course, but most people only remembered her by the Red of her riding hood.\n\nYou are Red.",
-            "image": "red",
-            "choices": [
-                {
-                    "text": "Next",
-                    "targetNodeId": "INTRO-B"
-                }
-            ]
-        },
-        {
-            "id": "INTRO-B",
-            "location": "woods",
-            "text": "Today you are tasked with delivering a basket to your grandmother. She lives on the other end of the forest. The path is dark and crooked, you've braved it many times before, and today's forest is quiet. Too quiet. You feel the world hold its breath in anticipation.",
-            "image": "red",
-            "choices": [
-                {
-                    "text": "Next",
-                    "targetNodeId": "INTRO-C"
-                }
-            ]
-        },
-        {
-            "id": "INTRO-C",
-            "location": "woods",
-            "text": "There's something strange curled up on the roadside…",
-            "image": "red",
-            "choices": [
-                {
-                    "text": "Next",
-                    "targetNodeId": "FIND-WOLF"
-                }
-            ]
-        },
-        {
-            "id": "FIND-WOLF",
-            "location": "woods",
-            "text": "It's a small and delicate thing, shivering.",
-            "image": "red",
-            "choices": [
-                {
-                    "text": "Leave",
-                    "targetNodeId": "LEAVE-WOLF"
-                },
-                {
-                    "text": "Help",
-                    "targetNodeId": "HELP-WOLF"
-                }
-            ]
-        },
-        {
-            "id": "LEAVE-WOLF",
-            "location": "woods",
-            "text": "You were raised with responsibility. A wild animal can be dangerous, and its mother is surely nearby.",
-            "image": "red"
-        },
-        {
-            "id": "HELP-WOLF",
-            "location": "woods",
-            "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon",
-            "image": "red"
+          "text": "Next",
+          "targetNodeId": "INTRO-B"
         }
-    ]
+      ]
+    },
+    {
+      "id": "INTRO-B",
+      "location": "woods",
+      "text": "Today you are tasked with delivering a basket to your grandmother. She lives on the other end of the forest. The path is dark and crooked, you've braved it many times before, and today's forest is quiet. Too quiet. You feel the world hold its breath in anticipation.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "INTRO-C"
+        }
+      ]
+    },
+    {
+      "id": "INTRO-C",
+      "location": "woods",
+      "text": "There's something strange curled up on the roadside…",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "FIND-WOLF"
+        }
+      ]
+    },
+    {
+      "id": "FIND-WOLF",
+      "location": "woods",
+      "text": "It's a small and delicate thing, shivering.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Leave",
+          "targetNodeId": "LEAVE-WOLF"
+        },
+        {
+          "text": "Help",
+          "targetNodeId": "HELP-WOLF"
+        },
+        {
+          "text": "Search",
+          "targetNodeId": "A-SEARCH"
+        }
+      ]
+    },
+    {
+      "id": "LEAVE-WOLF",
+      "location": "woods",
+      "text": "You were raised with responsibility. A wild animal can be dangerous, and its mother is surely nearby.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-CAMP1"
+        }
+      ]
+    },
+    {
+      "id": "HELP-WOLF",
+      "location": "woods",
+      "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon",
+      "image": "red"
+    },
+    {
+      "id": "A-SEARCH",
+      "location": "woods",
+      "text": "You look around for its mother, but can't seem to find her. Or anything else, for that matter. The cub shivers violently.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "FIND-WOLF"
+        }
+      ]
+
+    },
+    {
+      "id": "A-CAMP1",
+      "location": "camp",
+      "text": "As night falls, you find a spot to rest. You put the basket aside and lay down by some bushes. The grass is cold and prickly. You think about your journey. About the cub you left behind. Maybe its mother has returned by now, searching for their prey.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Sleep",
+          "targetNodeId": "A-CAMP1-SLEEP"
+        },
+        {
+          "text": "Search",
+          "targetNodeId": "A-CAMP1-SEARCH"
+        },
+        {
+          "text": "Don't sleep",
+          "targetNodeId": "A-CAMP1-AWAKE"
+        }
+      ]
+
+    },
+    {
+      "id": "A-CAMP1-SLEEP",
+      "location": "camp",
+      "text": "You wake up, shaking. In the dark, you see a pair of lights. They sparkle in between the trees, phasing in and out, growing larger and larger. You can’t move. But you see. This is the end.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+
+      ]
+    },
+    {
+      "id": "A-CAMP1-SEARCH",
+      "location": "camp",
+      "text": "The woods are mysterious at night. The shadows of the landscape seem to shift when you look away. Your skin crawls, but there are no bugs to be found.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-CAMP1"
+        }
+      ]
+    },
+    {
+      "id": "A-CAMP1-AWAKE",
+      "location": "camp",
+      "text": "Your eyelids grow heavy, but you startle awake. There’s a large branch nearby. Holding it is comforting.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Scare off the shadows",
+          "targetNodeId": "A-BRANCH"
+        }
+      ]
+    },
+    {
+      "id": "A-BRANCH",
+      "location": "camp",
+      "text": "You wake up, shaking. In the dark, you see a pair of lights. They sparkle in between the trees, phasing in and out, growing larger and larger.\n\nYou hold the branch firmly and shout towards the lights. You wave it around wildly, making yourself as big and loud and intimidating as you can possibly be. In an instant, the lights disappear. You fall back down and huddle against a large tree. You won’t fall asleep tonight.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-MORN1"
+        }
+      ]
+    },
+    {
+      "id": "A-MORN1",
+      "location": "camp",
+      "text": "The sunlight is harsh against your weary eyes, but makes you exhale deeply in relief. The night has passed.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-WM"
+        }
+      ]
+    },
+    {
+      "id": "A-WM",
+      "location": "woods",
+      "text": "Out of the corner of your eye, you notice a figure in the distance. The sheen of its rifle gives it away. And its sights are set…\n\n On you.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Run away",
+          "targetNodeId": "A-WM-RUN"
+        },
+        {
+          "text": "Talk",
+          "targetNodeId": "A-WM-TALK"
+        },
+        {
+          "text": "Scream",
+          "targetNodeId": "A-WM-SCREAM"
+        }
+
+      ]
+    },
+    {
+      "id": "A-WM-RUN",
+      "location": "woods",
+      "text": "You whip around, trying to dash for cover, but your legs aren’t listening to you anymore. You keel over. You feel as though enveloped by a warm blanket. Your eyes close. They won’t open again.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "A-WN-TALK",
+      "location": "woods",
+      "text": "Your words are drowned out by the ringing of a gunshot. Warmth swells in your body as you collapse. Your eyes close. They won’t open again.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "A-WM-SCREAM",
+      "location": "woods",
+      "text": "You scream louder than you thought was possible. The figure doesn’t move. Then, slowly, it rises. A large man walks into your view.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-WM-SCREAM2"
+        }
+      ]
+    },
+    {
+      "id": "A-WM-SCREAM2",
+      "location": "woods",
+      "text": "“Goodness, girlie, you oughta be more careful around these parts! Someone less attentive might’ve hit you, you know,” he warns with a chuckle, although it feels forced. He isn’t ready to accept how close it really was.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Chat",
+          "targetNodeId": "LW-WM-CHAT"
+        },
+        {
+          "text": "Leave",
+          "targetNodeId": "WM-LEAVE"
+        }
+      ]
+    },
+    {
+      "id": "LW-WM-CHAT",
+      "location": "woods",
+      "text": "",
+      "image": "You tell the woodsman that you’re on a delivery trip yo your grandmother’s.\n\n“Oh, wait, I know you! You’re Red, right? Your grandmother mentioned you a couple of times.” He quiets, deep in thought. “But seriously. Look after yourself. Take plenty of breaks, and… It’s probably nothing, but there’s been more animals here lately. If they give you any trouble, try to be loud and swing something around. That should scare them off.”",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-WM-SCREAM2"
+        }
+      ]
+    },
+    {
+      "id": "WM-LEAVE",
+      "location": "woods",
+      "text": "You thank him for the advice, and wave goodbye, continuing your journey.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "A-G"
+        }
+      ]
+    },
+    {
+      "id": "A-G",
+      "location": "woods",
+      "text": "There’s a small grave on the side of the pathway. A young girl, similar in age to you, kneels by the headstone and weeps. The grave is in poor condition, and it’s clear that someone has tried to dig the coffin out.\n\nShe startles as she hears you approaching, tears streaming down her face.\n\n“Who are you?! Did you do this?”\n\nShe’s standing now, running towards you. Quick, think!",
+      "image": "",
+      "choices": [
+        {
+          "text": "Talk",
+          "targetNodeId": "A-G-TALK"
+        },
+        {
+          "text": "Dodge",
+          "targetNodeId": "A-G-DODGE"
+        },
+        {
+          "text": "Run",
+          "targetNodeId": "A-G-RUN"
+        }
+      ]
+    }
+
+  ]
 }
