@@ -72,9 +72,6 @@
       "id": "B-START",
       "location": "woods",
       "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon.",
-<<<<<<< HEAD:Assets/Resources/story.json
-      "image": "red"
-=======
       "image": "red",
       "choices": [
         {
@@ -86,7 +83,6 @@
           "targetNodeId": "B-CAMP1"
         }
       ]
->>>>>>> cfc1f68 (update story.json structure, still missing text and conditionals for endings):Assets/StreamingAssets/story.json
     },
     {
       "id": "A-SEARCH",
@@ -320,7 +316,7 @@
     {
       "id": "B-START-A",
       "location": "woods",
-      "text": "The animal stirs inside the basket. The night is approaching",
+      "text": "The animal stirs inside the basket. The night is approaching. ",
       "image": "red",
       "choices": [
         {
@@ -385,7 +381,7 @@
     {
       "id": "B-CAMP-MORN1-A",
       "location": "",
-      "text": "",
+      "text": "The morning sunlight is warm and comforting. There is a dark wolf standing guard nearby. It’s large, but strikingly familiar. The basket is open.",
       "image": "",
       "choices": [
         {
@@ -397,7 +393,7 @@
     {
       "id": "B-CAMP-MORN1-B",
       "location": "",
-      "text": "",
+      "text": "Its ears twitch. The creature spins around, and leaps an impossible distance towards you, jaws wide open-",
       "image": "",
       "choices": [
         {
@@ -409,7 +405,7 @@
     {
       "id": "B-CAMP-MORN1-C",
       "location": "",
-      "text": "",
+      "text": "-And stops just short of you, panting. It looks up at you expectantly.",
       "image": "",
       "choices": [
         {
@@ -419,9 +415,21 @@
       ]
     },
     {
+      "id": "B-MORN1-SEARCH",
+      "location": "",
+      "text": "You see a bit of colour in the dark. But as you crawl closer, you realise it’s a couple of mushrooms. Better leave them alone.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-WM"
+        }
+      ]
+    },
+    {
       "id": "B-WM",
       "location": "",
-      "text": "With your new companion in tow, you continue towards your grandmother’s cottage. The wolf occasionally runs off to chase a bird, but always returns to your side. \n\n Suddenly, you hear growling. There’s a man with a rifle pointed right at the wolf. \n\n “Little girl, get away from that creature! It’s dangerous!”",
+      "text": "With your new companion in tow, you continue towards your grandmother’s cottage. The wolf occasionally runs off to chase a bird, but always returns to your side. \n\nSuddenly, you hear growling. There’s a man with a rifle pointed right at the wolf. \n\n“Little girl, get away from that creature! It’s dangerous!”",
       "image": "",
       "choices": [
         {
@@ -441,7 +449,7 @@
     {
       "id": "B-WM-PROTECT",
       "location": "",
-      "text": "",
+      "text": "You launch yourself in front of the wolf, holding your arms out in a protective gesture. The woodsman startles and jumps backward. He still carefully watches the wolf, seemingly ready to raise his rifle if the need arises. \n\n“Alright, I won’t do anything. Calm down.”",
       "image": "",
       "choices": [
         {
@@ -461,7 +469,7 @@
     {
       "id": "B-WM-CHAT",
       "location": "",
-      "text": "",
+      "text": "You tell the woodsman that you’re going to see your grandmother. \n\n“Oh, you’re that old woman’s granddaughter? Take this.” ",
       "image": "",
       "choices": [
         {
@@ -485,7 +493,7 @@
     {
       "id": "B-WM-EAT",
       "location": "",
-      "text": "",
+      "text": "You don’t trust him. You shout at the wolf to attack the woodsman. The woodsman is a second too late to shoot. \n\nThe wolf feasts. All that remains is a broken rifle.",
       "image": "",
       "choices": [
         {
@@ -498,7 +506,7 @@
     {
       "id": "B-WM-ESCALATE",
       "location": "",
-      "text": "",
+      "text": "You step forward and try to explain that the wolf is friendly, but it’s too late. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too. ",
       "image": "",
       "choices": [
         {
@@ -510,7 +518,7 @@
     {
       "id": "B-WM-NOTHING",
       "location": "",
-      "text": "",
+      "text": "You stand still and watch. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too. ",
       "image": "",
       "choices": [
         {
@@ -523,7 +531,7 @@
     {
       "id": "B-G",
       "location": "",
-      "text": "",
+      "text": "There’s a small grave on the side of the pathway. A young girl, similar in age to you, kneels by the headstone and weeps. \n\nShe looks towards you as she hears you approaching, tears streaming down her face. Her face softens when she sees the wolf, and she reaches out to pat it. \n\n“My mother,” she gasps out between sobs, “she left me. I’m all alone now.”",
       "image": "",
       "choices": [
         {
@@ -543,7 +551,7 @@
     {
       "id": "B-G-CHAT",
       "location": "",
-      "text": "",
+      "text": "You accompany her for a while and listen to her troubles. \n\n“I feel a bit better now. Here, have this charm. It’s meant to bring you luck, but it hasn’t done much good for me.” ",
       "image": "",
       "choices": [
         {
@@ -559,7 +567,7 @@
     {
       "id": "B-G-EAT",
       "location": "",
-      "text": "",
+      "text": "The wolf has gained a thirst for blood. You shout at the wolf to attack the girl. She screams. \n\nBy the time you leave, there’s nothing left at all.",
       "image": "",
       "choices": [
         {
@@ -571,19 +579,7 @@
     {
       "id": "B-G-LEAVE",
       "location": "",
-      "text": "",
-      "image": "",
-      "choices": [
-        {
-          "text": "Next",
-          "targetNodeId": "B-CAMP2"
-        }
-      ]
-    },
-    {
-      "id": "B-G-EAT",
-      "location": "",
-      "text": "",
+      "text": "You wave goodbye to the girl. She’s still sniffling but musters a smile before waving back. You hope she doesn’t feel as lonely anymore.",
       "image": "",
       "choices": [
         {
@@ -612,7 +608,7 @@
     {
       "id": "B-CAMP2-SEARCH",
       "location": "",
-      "text": "",
+      "text": "It appears that someone has been here before. You find a rubber ball. The wolf looks up at you.",
       "image": "",
       "choices": [
         {
@@ -624,7 +620,7 @@
     {
       "id": "B-CAMP2-PLAY",
       "location": "",
-      "text": "",
+      "text": "You throw the ball and the wolf eagerly runs to bring it back. You repeat this until you both grow weary. The wolf appears to be pleased!",
       "image": "",
       "choices": [
         {
@@ -650,7 +646,7 @@
     {
       "id": "B-MORN2",
       "location": "",
-      "text": "",
+      "text": "You close your eyes and drift into a dreamless sleep. The journey has been long and tiring. The wolf huddles up against you. Its warmth is comforting. \n\nYou wake up to loud barking. The wolf is chasing some poor bird from tree to tree. You find yourself curled around the charm the girl had given you. \n\nThe weather is clear and sunny today. You’re almost there.",
       "image": "",
       "choices": [
         {
