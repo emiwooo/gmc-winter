@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 
 [System.Serializable]
     public class ChoiceData {
@@ -67,7 +68,7 @@ public class TextManager : MonoBehaviour
         TextAsset jsonAsset = Resources.Load<TextAsset>("story");
         if (jsonAsset == null)
         {
-            Debug.LogError("Could not find story.json in Resources folder!");
+            UnityEngine.Debug.LogError("Could not find story.json in Resources folder!");
             return;
         }
 
@@ -80,7 +81,8 @@ public class TextManager : MonoBehaviour
 
     public void DisplayNode(string nodeId)
     {
-        Debug.Log($"Displaying node: {nodeId}");
+        UnityEngine.Debug.Log($"Displaying node: {nodeId}");
+        UnityEngine.Debug.Log($"Morality: {gameManager.morality}");
         if (!storyMap.ContainsKey(nodeId)) return;
 
         // variable updates based on nodeId
@@ -89,7 +91,10 @@ public class TextManager : MonoBehaviour
             gameManager.ResetRun();
             wolf.UpdateWolfImage();
         } 
-        else if (nodeId == "B-START")
+        else if (nodeId == "GOOD-END2")
+        {
+            audioManager.PlayWin();
+        } else if (nodeId == "B-START")
         {
             gameManager.hasWolf = true;
             wolf.UpdateWolfImage();
@@ -106,7 +111,7 @@ public class TextManager : MonoBehaviour
             gameManager.morality -= 1;
             wolf.AffectionIncrease();
             wolf.Eat();
-        } else if (nodeId == "B-CAMP2-PLAY")
+        } else if (nodeId == "B-CAMP2-PLAY"||(nodeId=="B-WM-PROTECT"))
         {
             if (wolf != null)
             {
@@ -318,7 +323,7 @@ public class TextManager : MonoBehaviour
             case "hasWolf":   return gameManager.hasWolf ? 1 : 0;
             case "hasCharm":  return gameManager.hasCharm ? 1 : 0;
             default:
-                Debug.LogWarning($"Unknown condition variable: {varName}");
+                UnityEngine.Debug.LogWarning($"Unknown condition variable: {varName}");
                 return 0;
         }
     }

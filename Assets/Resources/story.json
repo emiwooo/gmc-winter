@@ -276,8 +276,8 @@
       "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon.",
       "image": "woods",
       "choices": [
-        { "text": "Search around wolf", "targetNodeId": "B-SEARCH" },
-        { "text": "Camp with wolf", "targetNodeId": "B-CAMP1" }
+        { "text": "Search", "targetNodeId": "B-SEARCH" },
+        { "text": "Camp", "targetNodeId": "B-CAMP1" }
       ]
     },
     {
@@ -295,7 +295,7 @@
       "text": "The animal stirs inside the basket. The night is approaching.",
       "image": "woods",
       "choices": [
-        { "text": "Camp with wolf", "targetNodeId": "B-CAMP1" }
+        { "text": "Camp", "targetNodeId": "B-CAMP1" }
       ]
     },
     {
@@ -377,8 +377,8 @@
       "text": "With your new companion in tow, you continue towards your grandmother's cottage. The wolf occasionally runs off to chase a bird, but always returns to your side.\n\nSuddenly, you hear growling. There's a man with a rifle pointed right at the wolf.\n\n\"Little girl, get away from that creature! It's dangerous!\"",
       "image": "woods",
       "choices": [
-        { "text": "Protect wolf", "targetNodeId": "B-WM-PROTECT" },
-        { "text": "De-escalate", "targetNodeId": "B-WM-ESCALATE" },
+        { "text": "Protect", "targetNodeId": "B-WM-PROTECT" },
+        { "text": "Calm", "targetNodeId": "B-WM-ESCALATE" },
         { "text": "Do nothing", "targetNodeId": "B-WM-NOTHING" }
       ]
     },

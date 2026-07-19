@@ -70,7 +70,7 @@ public class Wolf : MonoBehaviour
 
     public void AffectionIncrease()
     {
-        affection = Mathf.Min(affection + 20f, 100f);
+        affection = Mathf.Min(affection + 30f, 100f);
     }
 
     public void hungry()

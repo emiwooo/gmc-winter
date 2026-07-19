@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class AudioManager : MonoBehaviour
 
     [Header("Music")]
     [SerializeField] AudioClip bgm1;
+    [SerializeField] AudioClip winm;
 
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource winSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +60,23 @@ public class AudioManager : MonoBehaviour
     public void PlayClickSound()
     {
         audioSource.PlayOneShot(click);
+    }
+
+    public void PlayWin()
+{
+    StartCoroutine(PlayWinThenResumeBGM());
+}
+    private IEnumerator PlayWinThenResumeBGM()
+    {
+        audioSource.Pause();
+        winSource.clip = winm;
+        winSource.loop = false;
+        winSource.Play();
+
+        yield return new WaitForSeconds(winm.length);
+
+        winSource.Stop();
+        audioSource.UnPause();
     }
 
     public void PlayBGM()
