@@ -72,7 +72,21 @@
       "id": "B-START",
       "location": "woods",
       "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon.",
+<<<<<<< HEAD:Assets/Resources/story.json
       "image": "red"
+=======
+      "image": "red",
+      "choices": [
+        {
+          "text": "Search around wolf",
+          "targetNodeId": "B-SEARCH"
+        },
+        {
+          "text": "Camp with wolf",
+          "targetNodeId": "B-CAMP1"
+        }
+      ]
+>>>>>>> cfc1f68 (update story.json structure, still missing text and conditionals for endings):Assets/StreamingAssets/story.json
     },
     {
       "id": "A-SEARCH",
@@ -285,7 +299,465 @@
           "targetNodeId": "A-G-RUN"
         }
       ]
+    },
+
+
+
+    {"_comment": "b route starts here"},
+
+    {
+      "id": "B-SEARCH",
+      "location": "woods",
+      "text": "You spot a cluster of red berries nestled within the thicket. You grab a handful.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-START-A"
+        }
+      ]
+    },
+    {
+      "id": "B-START-A",
+      "location": "woods",
+      "text": "The animal stirs inside the basket. The night is approaching",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Camp with wolf",
+          "targetNodeId": "B-CAMP1"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP1",
+      "location": "camp",
+      "text": "As night falls, you find a comfortable spot to rest. ou hold the basket tightly in your arms and lay down by some bushes. The grass is soft and a little ticklish. You think about your journey. About the cub you rescued. About what awaits you both.",
+      "image": "red",
+      "choices": [
+        {
+          "text": "Search",
+          "targetNodeId": "B-CAMP1-SEARCH"
+        },
+        {
+          "text": "Sleep",
+          "targetNodeId": "B-CAMP1-SLEEP"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP1-SEARCH",
+      "location": "",
+      "text": "You scan your surroundings. You notice a small, still bird. Its legs are twisted the wrong way around. You take it.",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP1-A"
+        }
+      ]
+    },
+    
+    {
+      "id": "B-CAMP1-A",
+      "location": "camp",
+      "text": "You wonder what happened to that bird. ",
+      "image": "",
+      "choices": [
+        {
+          "text": "Sleep",
+          "targetNodeId": "B-CAMP1-SLEEP"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP1-SLEEP",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP-MORN1-A"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP-MORN1-A",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP-MORN1-B"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP-MORN1-B",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP-MORN1-C"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP-MORN1-C",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Search",
+          "targetNodeId": "B-MORN1-SEARCH"
+        }
+      ]
+    },
+    {
+      "id": "B-WM",
+      "location": "",
+      "text": "With your new companion in tow, you continue towards your grandmother’s cottage. The wolf occasionally runs off to chase a bird, but always returns to your side. \n\n Suddenly, you hear growling. There’s a man with a rifle pointed right at the wolf. \n\n “Little girl, get away from that creature! It’s dangerous!”",
+      "image": "",
+      "choices": [
+        {
+          "text": "Protect wolf",
+          "targetNodeId": "B-WM-PROTECT"
+        },
+        {
+          "text": "De-escalate",
+          "targetNodeId": "B-WM-ESCALATE"
+        },
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP-MORN1-C"
+        }
+      ]
+    },
+    {
+      "id": "B-WM-PROTECT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Chat",
+          "targetNodeId": "B-WM-CHAT"
+        },
+        {
+          "text": "Eat",
+          "targetNodeId": "B-WM-EAT"
+        },
+        {
+          "text": "Leave",
+          "targetNodeId":"B-WM-LEAVE"
+        }
+      ]
+    },
+    {
+      "id": "B-WM-CHAT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Leave",
+          "targetNodeId": "B-WM-LEAVE"
+        }
+      ]
+    },
+    {
+      "id": "B-WM-LEAVE",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-G"
+        }
+      ]
+    },
+    {
+      "id": "B-WM-EAT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-G"
+        }
+      ]
+    },
+
+    {
+      "id": "B-WM-ESCALATE",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "BAD-END6"
+        }
+      ]
+    },
+    {
+      "id": "B-WM-NOTHING",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "BAD-END7"
+        }
+      ]
+    },
+
+    {
+      "id": "B-G",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Chat",
+          "targetNodeId": "B-G-CHAT"
+        },
+        {
+          "text": "Eat",
+          "targetNodeId": "B-G-EAT"
+        },
+        {
+          "text":"Leave",
+          "targetNodeId":"B-G-LEAVE"
+        }
+      ]
+    },
+    {
+      "id": "B-G-CHAT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Eat",
+          "targetNodeId": "B-G-EAT"
+        },
+        {
+          "text": "Leave",
+          "targetNodeId": "B-G-LEAVE"
+        }
+      ]
+    },
+    {
+      "id": "B-G-EAT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP2"
+        }
+      ]
+    },
+    {
+      "id": "B-G-LEAVE",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP2"
+        }
+      ]
+    },
+    {
+      "id": "B-G-EAT",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-CAMP2"
+        }
+      ]
+    },
+
+    {
+      "id": "B-CAMP2",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Search",
+          "targetNodeId": "B-CAMP2-SEARCH"
+        },
+        {
+          "text":"Sleep",
+          "targetNodeId":"B-CAMP2-SLEEP"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP2-SEARCH",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Play",
+          "targetNodeId": "B-CAMP2-PLAY"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP2-PLAY",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Sleep",
+          "targetNodeId": "B-CAMP2-SLEEP"
+        }
+      ]
+    },
+    {
+      "id": "B-CAMP2-SLEEP",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "!!!ENDS???"
+        }
+      ]
+    },
+
+
+    {
+      "id": "B-MORN2",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "B-COTTAGE"
+        }
+      ]
+    },
+
+    {
+      "id": "B-COTTAGE",
+      "location": "",
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "Next",
+          "targetNodeId": "!!!ENDS???"
+        }
+      ]
+    },
+
+    {
+      "id": "BAD-END6",
+      "location": "",
+      "text": "Dead Companion",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END7",
+      "location": "",
+      "text": "Bystander",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END8",
+      "location": "",
+      "text": "Disloyal Companion",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END9",
+      "location": "",
+      "text": "Loyal Companion",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END10",
+      "location": "",
+      "text": "Master's Pet",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END11",
+      "location": "",
+      "text": "Fairytale Ending",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
+    },
+    {
+      "id": "BAD-END12",
+      "location": "",
+      "text": "Wolf's prey",
+      "image": "",
+      "choices": [
+        {
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
+        }
+      ]
     }
+
 
   ]
 }
