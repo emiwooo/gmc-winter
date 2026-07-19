@@ -47,9 +47,8 @@ public class TextManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("TextManager Start");
         LoadStoryData();
-        DisplayNode("INTRO-A"); 
+        DisplayNode("1"); 
     }
 
     void LoadStoryData()
@@ -105,15 +104,15 @@ public class TextManager : MonoBehaviour
         {
             typed += c;
             audioManager.PlayTypingSound();
-            
-            // Build text sequence
+            text.text = string.Join("\n", history);
             if (history.Count > 0)
-                text.text = string.Join("\n", history) + "\n" + typed;
-            else
-                text.text = typed;
+            {
+                text.text += "\n";
+            } 
+            text.text += typed;
 
-            yield return new WaitForEndOfFrame();
-            scrollRect.verticalNormalizedPosition = 0f;
+            Canvas.ForceUpdateCanvases();
+            scrollRect.verticalNormalizedPosition = 0;
         
             yield return new WaitForSeconds(textSpeed);    
         }

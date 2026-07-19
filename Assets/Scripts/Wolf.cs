@@ -7,10 +7,12 @@ public class Wolf : MonoBehaviour
     public float hunger = 80f;
     public float affection = 0f;
 
-    public Image smallDog;
-    public Image mediumDog;
-    public Image largeDogEvil;
-    public Image largeDogGood;
+    public Image imageDisplay;
+    public Sprite smallDog;
+    public Sprite mediumDog;
+    public Sprite largeDogGood;
+    public Sprite largeDogEvil;
+    private Sprite currentImage;
 
     public StatsBar hungerBar;
     public StatsBar affectionBar;
@@ -18,7 +20,11 @@ public class Wolf : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentImage = smallDog;
+        smallDog = Resources.Load<Sprite>("smallDog");
+        mediumDog = Resources.Load<Sprite>("mediumDog");
+        largeDogGood = Resources.Load<Sprite>("largeDogGood");
+        largeDogEvil = Resources.Load<Sprite>("largeDogEvil");
     }
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class Wolf : MonoBehaviour
     {
         hunger = 80f;
         affection = 0f;
+        currentImage = smallDog;
     }
 
     public void Feed()
@@ -45,4 +52,26 @@ public class Wolf : MonoBehaviour
         audioManager.PlaySound("bark");
     }
 
+    public void UpdateWolfImage()
+    {
+        if (GameManager.Instance.daysNo == 1)
+        {
+            currentImage = smallDog;
+        }
+        else if (GameManager.Instance.daysNo == 2)
+        {
+            currentImage = mediumDog;
+        }
+        else if (GameManager.Instance.daysNo == 3)
+        {
+            if (GameManager.Instance.morality == -2)
+            {
+                currentImage = largeDogEvil;
+            }
+            else
+            {
+                currentImage = largeDogGood;
+            }
+        }
+    }
 }

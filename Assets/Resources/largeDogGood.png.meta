@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8899acb7fdb0f294d9c80d1828d619d0
+guid: 4cdeac3cba8b6f74a990e5f87495b974
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8166710274925509176
-    second: red_0
+      213: 7834878335550825109
+    second: largeDogGood_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: red_0
+      name: largeDogGood_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 56
-        height: 64
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83ab778d9bbf55170800000000000000
-      internalID: 8166710274925509176
+      spriteID: 59229e0d5541bbc60800000000000000
+      internalID: 7834878335550825109
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b6c6fa69a52c6b4daa300c1d6f7988a
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      red_0: 8166710274925509176
+      largeDogGood_0: 7834878335550825109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

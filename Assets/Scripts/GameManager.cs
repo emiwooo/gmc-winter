@@ -5,9 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public enum GameState
     {
-        MainMenu,
         Playing,
-        Ending,
         PetCare,
         EndingsArchive,
         Settings
@@ -29,9 +27,7 @@ public class GameManager : MonoBehaviour
 
 
     // panels
-    public GameObject mainMenuPanel;
     public GameObject gameplayPanel;
-    public GameObject endingPanel;
     public GameObject petCarePanel;
     public GameObject settingsPanel;
     public GameObject endingsArchivePanel;
@@ -41,7 +37,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager Start");
         Instance = this;
-//        CurrentState = GameState.MainMenu;
         CurrentState = GameState.Playing;
         UpdateUI(CurrentState);
     }
@@ -85,9 +80,7 @@ public class GameManager : MonoBehaviour
     private void UpdateUI(GameState state)
     {
         // disable all panels first
-        if (mainMenuPanel) mainMenuPanel.SetActive(false);
         if (gameplayPanel) gameplayPanel.SetActive(false);
-        if (endingPanel) endingPanel.SetActive(false);
         if (petCarePanel) petCarePanel.SetActive(false);
         if (endingsArchivePanel) endingsArchivePanel.SetActive(false);
         if (settingsPanel) settingsPanel.SetActive(false);
@@ -95,14 +88,8 @@ public class GameManager : MonoBehaviour
         // enable the relevant panel based on the current state
         switch (state)
         {
-            case GameState.MainMenu:
-                if (mainMenuPanel) mainMenuPanel.SetActive(true);
-                break;
             case GameState.Playing:
                 if (gameplayPanel) gameplayPanel.SetActive(true);
-                break;
-            case GameState.Ending:
-                if (endingPanel) endingPanel.SetActive(true);
                 break;
             case GameState.PetCare:
                 if (petCarePanel) petCarePanel.SetActive(true);
