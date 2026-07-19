@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5556ba6c31cf1174083cf80ffe913d38
+guid: 8cd6566bc780024468d2884f28d9730e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4228841544402894719
-    second: campday_0
+      213: -5415152390355213561
+    second: woods_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: campday_0
+      name: woods_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 180837e45032055c0800000000000000
-      internalID: -4228841544402894719
+      spriteID: 7032548779389d4b0800000000000000
+      internalID: -5415152390355213561
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      campday_0: -4228841544402894719
+      woods_0: -5415152390355213561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

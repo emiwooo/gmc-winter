@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e9b6b3ef080eb834f9c02f0ba2549d2e
+guid: 8f6a32e5600bd5745aafc6d137a891b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6386195874311456384
-    second: campnightnoeyes_0
+      213: 7623689671616184818
+    second: campnight_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: campnightnoeyes_0
+      name: campnight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 086466aef4350a850800000000000000
-      internalID: 6386195874311456384
+      spriteID: 2f14f724d59ccc960800000000000000
+      internalID: 7623689671616184818
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      campnightnoeyes_0: 6386195874311456384
+      campnight_0: 7623689671616184818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

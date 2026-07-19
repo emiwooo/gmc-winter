@@ -198,7 +198,14 @@ public class TextManager : MonoBehaviour
             {
                 history.Add($"<color=#808080><b>> {chosenText}</b></color>");
                 RefreshHistory();
-                DisplayNode(ResolveTarget(capturedChoice));
+                if (wolf != null && wolf.hunger <= 0f)
+                {
+                    DisplayNode("BAD-END11");
+                }
+                else
+                {
+                    DisplayNode(ResolveTarget(capturedChoice));
+                }
             });
         }
     }
