@@ -72,7 +72,7 @@
       "id": "A-CAMP1-SLEEP",
       "location": "camp",
       "text": "You wake up, shaking. In the dark, you see a pair of lights. They sparkle in between the trees, phasing in and out, growing larger and larger.\n\nYou can't move. But you see. This is the end.",
-      "image": "campnight",
+      "image": "campnighteyes",
       "choices": [
         { "text": "Next", "targetNodeId": "BAD-END1" }
       ]
@@ -231,7 +231,7 @@
       "id": "A-CAMP2-AWAKE",
       "location": "camp",
       "text": "Despite your best efforts, sleep claims you. The journey has been long and tiring. All you remember is the warmth of the campfire.\n\nYou never wake up again.",
-      "image": "campnight",
+      "image": "red",
       "choices": [
         { "text": "Next", "targetNodeId": "BAD-END4" }
       ]
@@ -365,7 +365,7 @@
     {
       "id": "B-MORN1-SEARCH",
       "location": "camp",
-      "text": "You see a bit of colour in the dark. But as you crawl closer, you realise it's a couple of mushrooms. Better leave them alone.",
+      "text": "You see a bit of colour in the shade. But as you crawl closer, you realise it's a couple of mushrooms. Better leave them alone.",
       "image": "campday",
       "choices": [
         { "text": "Next", "targetNodeId": "B-WM" }
@@ -524,7 +524,7 @@
     {
       "id": "B-MORN2",
       "location": "camp",
-      "text": "You close your eyes and drift into a dreamless sleep. The journey has been long and tiring. The wolf huddles up against you. Its warmth is comforting.\n\nYou wake up to loud barking. The wolf is chasing some poor bird from tree to tree. You find yourself curled around the charm the girl had given you.\n\nThe weather is clear and sunny today. You're almost there.",
+      "text": "You wake up to loud barking. The wolf is chasing some poor bird from tree to tree. You find yourself curled around the charm the girl had given you.\n\nThe weather is clear and sunny today. You're almost there.",
       "image": "campday",
       "choices": [
         { "text": "Next", "targetNodeId": "B-COTTAGE" }
@@ -551,7 +551,7 @@
       "id": "BAD-END1",
       "location": "ending",
       "text": "Bad Ending: Night Terrors",
-      "image": "campnighteyes",
+      "image": "red",
       "choices": [
         { "text": "Retry", "targetNodeId": "INTRO-A" }
       ]
@@ -668,7 +668,7 @@
       "id": "GOOD-END2",
       "location": "ending",
       "text": "The wolf happily struts alongside you, excitedly barking when he sees your grandmother.\n\n\"My dear, how have you been? And who's this?\"\n\nYour grandmother pours you tea and brings out a freshly baked pie. You talk to her about what has happened and she listens and nods. She feeds the wolf some treats and it wags its tail. How lovely it was to meet this friendly creature. You feel as if your family has gained another member.\n\nTrue Ending: Basket Delivered!\n\nThank you for playing.",
-      "image": "granny",
+      "image": "happy",
       "choices": [
         { "text": "Play again", "targetNodeId": "INTRO-A" }
       ]

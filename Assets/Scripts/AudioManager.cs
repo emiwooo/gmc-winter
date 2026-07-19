@@ -53,13 +53,13 @@ public class AudioManager : MonoBehaviour
 
         if (selectedClip != null)
         {
-            audioSource.PlayOneShot(selectedClip);
+            audioSource.PlayOneShot(selectedClip, 0.6f);
         }
     }
 
     public void PlayClickSound()
     {
-        audioSource.PlayOneShot(click);
+        audioSource.PlayOneShot(click, 0.6f);
     }
 
     public void PlayWin()
