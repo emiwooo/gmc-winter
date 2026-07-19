@@ -202,9 +202,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   choicePanelContainer: {fileID: 2088307471}
   choiceButtonPrefab: {fileID: 8001436068435322016, guid: 7d41e351d32e5aa488749cb7ffd7c4e5, type: 3}
   text: {fileID: 999129513}
-  textSpeed: 0.05
+  textSpeed: 0.08
 --- !u!4 &443514494
 Transform:
   m_ObjectHideFlags: 0
@@ -1127,12 +1127,13 @@ MonoBehaviour:
   hunger: 100
   affection: 0
   imageDisplay: {fileID: 1285493482}
+  noDog: {fileID: 0}
   smallDog: {fileID: 0}
   mediumDog: {fileID: 0}
   largeDogGood: {fileID: 0}
   largeDogEvil: {fileID: 0}
-  hungerBar: {fileID: 0}
-  affectionBar: {fileID: 0}
+  hungerBar: {fileID: 21998752}
+  affectionBar: {fileID: 1098274656}
 --- !u!4 &508758341
 Transform:
   m_ObjectHideFlags: 0
@@ -1455,12 +1456,14 @@ MonoBehaviour:
   wolf: {fileID: 508758340}
   textManager: {fileID: 443514493}
   audioManager: {fileID: 1410449833}
+  barsCover: {fileID: 1329228740}
   unlockedEndings: 
   food: 0
   morality: 0
   daysNo: 1
   hasWolf: 0
   hasCharm: 0
+  foodLeftText: {fileID: 1084406693}
   gameplayPanel: {fileID: 699427442}
 --- !u!4 &536382897
 Transform:
@@ -2499,7 +2502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.1803, y: -41.005005}
+  m_AnchoredPosition: {x: 291.1803, y: -38.005005}
   m_SizeDelta: {x: 542.3606, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999129513
@@ -2549,8 +2552,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2785,7 +2788,7 @@ GameObject:
   - component: {fileID: 1084406694}
   - component: {fileID: 1084406693}
   m_Layer: 5
-  m_Name: hungerText (1)
+  m_Name: foodLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2993,9 +2996,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3205,14 +3208,89 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9921569, g: 0.9921569, b: 0.9921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2063826154672905881, guid: 96475c2264772ad47b6af0fd7672f1a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1329228736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1329228737}
+  - component: {fileID: 1329228739}
+  - component: {fileID: 1329228740}
+  m_Layer: 5
+  m_Name: barToggleBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1329228737
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329228736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1837501651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -454.4999, y: -49.9362}
+  m_SizeDelta: {x: 909, y: 89.4175}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1329228739
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329228736}
+  m_CullTransparentMesh: 1
+--- !u!114 &1329228740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329228736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2063826154672905881, guid: 96475c2264772ad47b6af0fd7672f1a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3557,10 +3635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bab8ceb5be044aa08eb9cecd6eaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  typing1: {fileID: 0}
-  typing2: {fileID: 0}
-  typing3: {fileID: 0}
-  click: {fileID: 0}
+  typing1: {fileID: 8300000, guid: f843e8937901f6d42a6b10bc79449087, type: 3}
+  typing2: {fileID: 8300000, guid: 341480e27f2da8947b9cca4ea925c2ad, type: 3}
+  click: {fileID: 8300000, guid: f843e8937901f6d42a6b10bc79449087, type: 3}
   bark: {fileID: 0}
   growl: {fileID: 0}
   whine: {fileID: 0}
@@ -3992,6 +4069,7 @@ RectTransform:
   m_Children:
   - {fileID: 1916811587}
   - {fileID: 2106697429}
+  - {fileID: 1329228737}
   m_Father: {fileID: 699427443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4684,7 +4762,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 605518291}
   m_HandleRect: {fileID: 605518290}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

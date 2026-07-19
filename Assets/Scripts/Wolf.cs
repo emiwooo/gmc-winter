@@ -16,8 +16,9 @@ public class Wolf : MonoBehaviour
     public Sprite largeDogEvil;
     private Sprite currentImage;
 
-    public StatsBar hungerBar;
-    public StatsBar affectionBar;
+    public Slider hungerBar;
+    public Slider affectionBar;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +34,8 @@ public class Wolf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        hungerBar.value = hunger / 100f;
+        affectionBar.value = affection / 100f;
     }
 
     public void Reset()
@@ -48,6 +50,7 @@ public class Wolf : MonoBehaviour
         if (gameManager.food > 0)
         {
             gameManager.food--;
+            gameManager.UpdateFoodUI();
             hunger = Mathf.Min(hunger + 20f, 100f);
             audioManager.PlaySound("feed");
         }

@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
     [Header("UI Sounds")]
     [SerializeField] AudioClip typing1;
     [SerializeField] AudioClip typing2;
-    [SerializeField] AudioClip typing3;
     [SerializeField] AudioClip click;
 
     [Header("Wolf Sounds")]
@@ -37,20 +36,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTypingSound()
     {
-        int randomIndex = Random.Range(1, 4); // Generates a random number between 1 and 3
+        int randomIndex = Random.Range(1, 10); // Generates a random number between 1 and 10 (inclusive)
         AudioClip selectedClip = null;
 
-        switch (randomIndex)
+        if (randomIndex <= 4)
         {
-            case 1:
-                selectedClip = typing1;
-                break;
-            case 2:
-                selectedClip = typing2;
-                break;
-            case 3:
-                selectedClip = typing3;
-                break;
+            selectedClip = typing1;
+        }
+        else
+        {
+            selectedClip = typing2;
         }
 
         if (selectedClip != null)

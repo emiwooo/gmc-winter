@@ -9,6 +9,14 @@ using System.IO;
     public class ChoiceData {
         public string text;
         public string targetNodeId;
+        public List<ConditionalTarget> conditionalTargets; // first match wins, if none match, use default targetNodeId
+        public string visibleIf;
+    }
+
+    [System.Serializable]
+    public class ConditionalTarget {
+        public string condition;
+        public string targetNodeId;
     }
 
     [System.Serializable]
@@ -50,20 +58,22 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         LoadStoryData();
-        DisplayNode("INTRO-A"); 
+        DisplayNode("INTRO-A");
     }
 
     void LoadStoryData()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
-        if (File.Exists(filePath))
+        TextAsset jsonAsset = Resources.Load<TextAsset>("story");
+        if (jsonAsset == null)
         {
-            string jsonText = File.ReadAllText(filePath);
-            StoryWrapper wrapper = JsonUtility.FromJson<StoryWrapper>(jsonText);
-            foreach (var node in wrapper.nodes)
-            {
-                storyMap[node.id] = node;
-            }
+            Debug.LogError("Could not find story.json in Resources folder!");
+            return;
+        }
+
+        StoryWrapper wrapper = JsonUtility.FromJson<StoryWrapper>(jsonAsset.text);
+        foreach (var node in wrapper.nodes)
+        {
+            storyMap[node.id] = node;
         }
     }
 
@@ -108,6 +118,7 @@ public class TextManager : MonoBehaviour
         } else if ((nodeId == "B-CAMP1-SEARCH")||(nodeId == "B-WM-CHAT") || (nodeId == "B-SEARCH"))
         {
             gameManager.food += 1;
+            gameManager.UpdateFoodUI();
         } 
 
         currentNode = storyMap[nodeId];
@@ -170,19 +181,24 @@ public class TextManager : MonoBehaviour
 
         foreach (var choice in currentNode.choices)
         {
+            if (!string.IsNullOrEmpty(choice.visibleIf) && !EvaluateCondition(choice.visibleIf))
+            {
+                continue; // hide this choice entirely
+            }
+
             GameObject buttonObj = Instantiate(choiceButtonPrefab, choicePanelContainer);
             TextMeshProUGUI buttonText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = choice.text;
             Button button = buttonObj.GetComponent<Button>();
 
-            string targetNodeId = choice.targetNodeId;
+            ChoiceData capturedChoice = choice; 
             string chosenText = choice.text;
 
             button.onClick.AddListener(() =>   
             {
                 history.Add($"<color=#808080><b>> {chosenText}</b></color>");
                 RefreshHistory();
-                DisplayNode(targetNodeId);
+                DisplayNode(ResolveTarget(capturedChoice));
             });
         }
     }
@@ -228,5 +244,69 @@ public class TextManager : MonoBehaviour
         history.Clear();
         currentLocation = "";
         RefreshHistory();
+    }
+
+    private string ResolveTarget(ChoiceData choice)
+    {
+        if (choice.conditionalTargets != null)
+        {
+            foreach (var ct in choice.conditionalTargets)
+            {
+                if (EvaluateCondition(ct.condition))
+                    return ct.targetNodeId;
+            }
+        }
+        return choice.targetNodeId;
+    }
+
+    private bool EvaluateCondition(string condition)
+    {
+        if (string.IsNullOrEmpty(condition)) return true;
+
+        string[] ops = { ">=", "<=", "==", "!=", ">", "<" };
+        foreach (var op in ops)
+        {
+            int idx = condition.IndexOf(op);
+            if (idx > 0)
+            {
+                string varName = condition.Substring(0, idx).Trim();
+                string valueStr = condition.Substring(idx + op.Length).Trim();
+                if (!float.TryParse(valueStr, out float value)) return false;
+
+                float varValue = GetVariableValue(varName);
+                switch (op)
+                {
+                    case ">=": return varValue >= value;
+                    case "<=": return varValue <= value;
+                    case "==": return varValue == value;
+                    case "!=": return varValue != value;
+                    case ">":  return varValue > value;
+                    case "<":  return varValue < value;
+                }
+            }
+        }
+
+        // no operator -> it's a bool
+        bool negate = condition.StartsWith("!");
+        string flagName = negate ? condition.Substring(1) : condition;
+        bool flagValue = GetVariableValue(flagName) != 0;
+        return negate ? !flagValue : flagValue;
+    }
+
+    private float GetVariableValue(string varName)
+    {
+        switch (varName)
+        {
+            case "morality":  return gameManager.morality;
+            case "food":      return gameManager.food;
+            case "daysNo":    return gameManager.daysNo;
+            case "hunger":    return wolf.hunger;
+            case "affection": return wolf.affection;
+            case "hasWolf":   return gameManager.hasWolf ? 1 : 0;
+            case "hasCharm":  return gameManager.hasCharm ? 1 : 0;
+            default:
+                Debug.LogWarning($"Unknown condition variable: {varName}");
+                return 0;
+        }
     }
 }

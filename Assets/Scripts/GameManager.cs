@@ -1,5 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Reflection;
+using System.IO;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Wolf wolf;
     public TextManager textManager;
     public AudioManager audioManager;
+    public Image barsCover;
 
     // game logic stuff
     public List<int> unlockedEndings = new List<int>();
@@ -25,6 +30,7 @@ public class GameManager : MonoBehaviour
     public int daysNo = 1;
     public bool hasWolf = false;
     public bool hasCharm = false;
+    public TextMeshProUGUI foodLeftText;
 
 
     // panels
@@ -44,7 +50,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hasWolf)
+        {
+            barsCover.enabled = false;
+        }
+        else
+        {
+            barsCover.enabled = true;
+        }
     }
 
     public void ResetRun()
@@ -97,6 +110,14 @@ public class GameManager : MonoBehaviour
                 if (settingsPanel) settingsPanel.SetActive(true);
                 break;
                 */
+        }
+    }
+
+    public void UpdateFoodUI()
+    {
+        if (foodLeftText != null)
+        {
+            foodLeftText.text = "food remaining: " + food.ToString();
         }
     }
 
