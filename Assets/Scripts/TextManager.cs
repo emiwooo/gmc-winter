@@ -79,6 +79,7 @@ public class TextManager : MonoBehaviour
 
     public void DisplayNode(string nodeId)
     {
+        Debug.Log($"Displaying node: {nodeId}");
         if (!storyMap.ContainsKey(nodeId)) return;
 
         // variable updates based on nodeId

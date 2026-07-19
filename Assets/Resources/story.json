@@ -4,7 +4,7 @@
       "id": "INTRO-A",
       "location": "woods",
       "text": "Once upon a time, there was a young girl that lived in the woods. She had a name, of course, but most people only remembered her by the Red of her riding hood.\n\nYou are Red.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -16,7 +16,7 @@
       "id": "INTRO-B",
       "location": "woods",
       "text": "Today you are tasked with delivering a basket to your grandmother. She lives on the other end of the forest. The path is dark and crooked, you've braved it many times before, and today's forest is quiet. Too quiet. You feel the world hold its breath in anticipation.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -28,7 +28,7 @@
       "id": "INTRO-C",
       "location": "woods",
       "text": "There's something strange curled up on the roadside…",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -40,7 +40,7 @@
       "id": "FIND-WOLF",
       "location": "woods",
       "text": "It's a small and delicate thing, shivering.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Leave",
@@ -60,7 +60,7 @@
       "id": "A-START",
       "location": "woods",
       "text": "You were raised with responsibility. A wild animal can be dangerous, and its mother is surely nearby.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -72,7 +72,7 @@
       "id": "B-START",
       "location": "woods",
       "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Search around wolf",
@@ -88,7 +88,7 @@
       "id": "A-SEARCH",
       "location": "woods",
       "text": "You look around for its mother, but can't seem to find her. Or anything else, for that matter. The cub shivers violently.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -101,7 +101,7 @@
       "id": "A-CAMP1",
       "location": "camp",
       "text": "As night falls, you find a spot to rest. You put the basket aside and lay down by some bushes. The grass is cold and prickly. You think about your journey. About the cub you left behind. Maybe its mother has returned by now, searching for their prey.",
-      "image": "red",
+      "image": "campnight",
       "choices": [
         {
           "text": "Sleep",
@@ -122,7 +122,7 @@
       "id": "A-CAMP1-SLEEP",
       "location": "camp",
       "text": "You wake up, shaking. In the dark, you see a pair of lights. They sparkle in between the trees, phasing in and out, growing larger and larger. You can’t move. But you see. This is the end.",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Retry",
@@ -135,7 +135,7 @@
       "id": "A-CAMP1-SEARCH",
       "location": "camp",
       "text": "The woods are mysterious at night. The shadows of the landscape seem to shift when you look away. Your skin crawls, but there are no bugs to be found.",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Next",
@@ -147,7 +147,7 @@
       "id": "A-CAMP1-AWAKE",
       "location": "camp",
       "text": "Your eyelids grow heavy, but you startle awake. There’s a large branch nearby. Holding it is comforting.",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Scare off the shadows",
@@ -159,7 +159,7 @@
       "id": "A-BRANCH",
       "location": "camp",
       "text": "You wake up, shaking. In the dark, you see a pair of lights. They sparkle in between the trees, phasing in and out, growing larger and larger.\n\nYou hold the branch firmly and shout towards the lights. You wave it around wildly, making yourself as big and loud and intimidating as you can possibly be. In an instant, the lights disappear. You fall back down and huddle against a large tree. You won’t fall asleep tonight.",
-      "image": "",
+      "image": "campnighteyes",
       "choices": [
         {
           "text": "Next",
@@ -171,7 +171,7 @@
       "id": "A-MORN1",
       "location": "camp",
       "text": "The sunlight is harsh against your weary eyes, but makes you exhale deeply in relief. The night has passed.",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Next",
@@ -183,7 +183,7 @@
       "id": "A-WM",
       "location": "woods",
       "text": "Out of the corner of your eye, you notice a figure in the distance. The sheen of its rifle gives it away. And its sights are set…\n\n On you.",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Run away",
@@ -203,8 +203,8 @@
     {
       "id": "A-WM-RUN",
       "location": "woods",
-      "text": "You whip around, trying to dash for cover, but your legs aren’t listening to you anymore. You keel over. You feel as though enveloped by a warm blanket. Your eyes close. They won’t open again.",
-      "image": "",
+      "text": "You whip around, trying to dash for cover, but your legs aren’t listening to you anymore. You keel over. You feel as though enveloped by a warm blanket. Your eyes close. They won’t open again.\n\nBad Ending: Tragic Accident",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -215,8 +215,8 @@
     {
       "id": "A-WN-TALK",
       "location": "woods",
-      "text": "Your words are drowned out by the ringing of a gunshot. Warmth swells in your body as you collapse. Your eyes close. They won’t open again.",
-      "image": "",
+      "text": "Your words are drowned out by the ringing of a gunshot. Warmth swells in your body as you collapse. Your eyes close. They won’t open again.\n\nBad Ending: Tragic Accident",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -228,7 +228,7 @@
       "id": "A-WM-SCREAM",
       "location": "woods",
       "text": "You scream louder than you thought was possible. The figure doesn’t move. Then, slowly, it rises. A large man walks into your view.",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -240,7 +240,7 @@
       "id": "A-WM-SCREAM2",
       "location": "woods",
       "text": "“Goodness, girlie, you oughta be more careful around these parts! Someone less attentive might’ve hit you, you know,” he warns with a chuckle, although it feels forced. He isn’t ready to accept how close it really was.",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Chat",
@@ -255,8 +255,8 @@
     {
       "id": "LW-WM-CHAT",
       "location": "woods",
-      "text": "",
-      "image": "You tell the woodsman that you’re on a delivery trip yo your grandmother’s.\n\n“Oh, wait, I know you! You’re Red, right? Your grandmother mentioned you a couple of times.” He quiets, deep in thought. “But seriously. Look after yourself. Take plenty of breaks, and… It’s probably nothing, but there’s been more animals here lately. If they give you any trouble, try to be loud and swing something around. That should scare them off.”",
+      "text": "You tell the woodsman that you’re on a delivery trip yo your grandmother’s.\n\n“Oh, wait, I know you! You’re Red, right? Your grandmother mentioned you a couple of times.” He quiets, deep in thought. “But seriously. Look after yourself. Take plenty of breaks, and… It’s probably nothing, but there’s been more animals here lately. If they give you any trouble, try to be loud and swing something around. That should scare them off.",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -268,7 +268,7 @@
       "id": "WM-LEAVE",
       "location": "woods",
       "text": "You thank him for the advice, and wave goodbye, continuing your journey.",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -278,9 +278,9 @@
     },
     {
       "id": "A-G",
-      "location": "woods",
+      "location": "grave",
       "text": "There’s a small grave on the side of the pathway. A young girl, similar in age to you, kneels by the headstone and weeps. The grave is in poor condition, and it’s clear that someone has tried to dig the coffin out.\n\nShe startles as she hears you approaching, tears streaming down her face.\n\n“Who are you?! Did you do this?”\n\nShe’s standing now, running towards you. Quick, think!",
-      "image": "",
+      "image": "grave",
       "choices": [
         {
           "text": "Talk",
@@ -296,16 +296,11 @@
         }
       ]
     },
-
-
-
-    {"_comment": "b route starts here"},
-
     {
       "id": "B-SEARCH",
       "location": "woods",
       "text": "You spot a cluster of red berries nestled within the thicket. You grab a handful.",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -317,7 +312,7 @@
       "id": "B-START-A",
       "location": "woods",
       "text": "The animal stirs inside the basket. The night is approaching. ",
-      "image": "red",
+      "image": "woods",
       "choices": [
         {
           "text": "Camp with wolf",
@@ -329,7 +324,7 @@
       "id": "B-CAMP1",
       "location": "camp",
       "text": "As night falls, you find a comfortable spot to rest. ou hold the basket tightly in your arms and lay down by some bushes. The grass is soft and a little ticklish. You think about your journey. About the cub you rescued. About what awaits you both.",
-      "image": "red",
+      "image": "campnight",
       "choices": [
         {
           "text": "Search",
@@ -343,9 +338,9 @@
     },
     {
       "id": "B-CAMP1-SEARCH",
-      "location": "",
+      "location": "camp",
       "text": "You scan your surroundings. You notice a small, still bird. Its legs are twisted the wrong way around. You take it.",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Next",
@@ -358,7 +353,7 @@
       "id": "B-CAMP1-A",
       "location": "camp",
       "text": "You wonder what happened to that bird. ",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Sleep",
@@ -368,9 +363,9 @@
     },
     {
       "id": "B-CAMP1-SLEEP",
-      "location": "",
-      "text": "",
-      "image": "",
+      "location": "camp",
+      "text": "It's time to sleep. You think you hear a commotion during the night, but it's probably your imagination.",
+      "image": "campnight",
       "choices": [
         {
           "text": "Next",
@@ -380,9 +375,9 @@
     },
     {
       "id": "B-CAMP-MORN1-A",
-      "location": "",
+      "location": "camp",
       "text": "The morning sunlight is warm and comforting. There is a dark wolf standing guard nearby. It’s large, but strikingly familiar. The basket is open.",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Next",
@@ -392,9 +387,9 @@
     },
     {
       "id": "B-CAMP-MORN1-B",
-      "location": "",
+      "location": "camp",
       "text": "Its ears twitch. The creature spins around, and leaps an impossible distance towards you, jaws wide open-",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Next",
@@ -404,9 +399,9 @@
     },
     {
       "id": "B-CAMP-MORN1-C",
-      "location": "",
+      "location": "camp",
       "text": "-And stops just short of you, panting. It looks up at you expectantly.",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Search",
@@ -416,9 +411,9 @@
     },
     {
       "id": "B-MORN1-SEARCH",
-      "location": "",
+      "location": "camp",
       "text": "You see a bit of colour in the dark. But as you crawl closer, you realise it’s a couple of mushrooms. Better leave them alone.",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Next",
@@ -428,9 +423,9 @@
     },
     {
       "id": "B-WM",
-      "location": "",
+      "location": "woods",
       "text": "With your new companion in tow, you continue towards your grandmother’s cottage. The wolf occasionally runs off to chase a bird, but always returns to your side. \n\nSuddenly, you hear growling. There’s a man with a rifle pointed right at the wolf. \n\n“Little girl, get away from that creature! It’s dangerous!”",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Protect wolf",
@@ -448,9 +443,9 @@
     },
     {
       "id": "B-WM-PROTECT",
-      "location": "",
+      "location": "woods",
       "text": "You launch yourself in front of the wolf, holding your arms out in a protective gesture. The woodsman startles and jumps backward. He still carefully watches the wolf, seemingly ready to raise his rifle if the need arises. \n\n“Alright, I won’t do anything. Calm down.”",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Chat",
@@ -468,9 +463,9 @@
     },
     {
       "id": "B-WM-CHAT",
-      "location": "",
+      "location": "woods",
       "text": "You tell the woodsman that you’re going to see your grandmother. \n\n“Oh, you’re that old woman’s granddaughter? Take this.” ",
-      "image": "",
+      "image": "woods",
       "choices": [
         {
           "text": "Leave",
@@ -480,9 +475,9 @@
     },
     {
       "id": "B-WM-LEAVE",
-      "location": "",
-      "text": "",
-      "image": "",
+      "location": "woods",
+      "text": "You leave.",
+      "image": "woods",
       "choices": [
         {
           "text": "Next",
@@ -492,9 +487,9 @@
     },
     {
       "id": "B-WM-EAT",
-      "location": "",
+      "location": "wood",
       "text": "You don’t trust him. You shout at the wolf to attack the woodsman. The woodsman is a second too late to shoot. \n\nThe wolf feasts. All that remains is a broken rifle.",
-      "image": "",
+      "image": "wood",
       "choices": [
         {
           "text": "Next",
@@ -505,34 +500,34 @@
 
     {
       "id": "B-WM-ESCALATE",
-      "location": "",
-      "text": "You step forward and try to explain that the wolf is friendly, but it’s too late. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too. ",
-      "image": "",
+      "location": "wood",
+      "text": "You step forward and try to explain that the wolf is friendly, but it’s too late. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too.\n\nBad Ending: Dead Companion",
+      "image": "red",
       "choices": [
         {
-          "text": "Next",
-          "targetNodeId": "BAD-END6"
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
         }
       ]
     },
     {
       "id": "B-WM-NOTHING",
-      "location": "",
-      "text": "You stand still and watch. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too. ",
-      "image": "",
+      "location": "woods",
+      "text": "You stand still and watch. The gunshot echoes throughout the forest as the wolf makes its final whimper. You wonder if your grandmother can hear it too.\n\nBad Ending: Bystander",
+      "image": "red",
       "choices": [
         {
-          "text": "Next",
-          "targetNodeId": "BAD-END7"
+          "text": "Retry",
+          "targetNodeId": "INTRO-A"
         }
       ]
     },
 
     {
       "id": "B-G",
-      "location": "",
+      "location": "grave",
       "text": "There’s a small grave on the side of the pathway. A young girl, similar in age to you, kneels by the headstone and weeps. \n\nShe looks towards you as she hears you approaching, tears streaming down her face. Her face softens when she sees the wolf, and she reaches out to pat it. \n\n“My mother,” she gasps out between sobs, “she left me. I’m all alone now.”",
-      "image": "",
+      "image": "grave",
       "choices": [
         {
           "text": "Chat",
@@ -550,9 +545,9 @@
     },
     {
       "id": "B-G-CHAT",
-      "location": "",
+      "location": "grave",
       "text": "You accompany her for a while and listen to her troubles. \n\n“I feel a bit better now. Here, have this charm. It’s meant to bring you luck, but it hasn’t done much good for me.” ",
-      "image": "",
+      "image": "grave",
       "choices": [
         {
           "text": "Eat",
@@ -566,21 +561,21 @@
     },
     {
       "id": "B-G-EAT",
-      "location": "",
+      "location": "grave",
       "text": "The wolf has gained a thirst for blood. You shout at the wolf to attack the girl. She screams. \n\nBy the time you leave, there’s nothing left at all.",
-      "image": "",
+      "image": "grave",
       "choices": [
         {
-          "text": "Next",
+          "text": "Leave",
           "targetNodeId": "B-CAMP2"
         }
       ]
     },
     {
       "id": "B-G-LEAVE",
-      "location": "",
+      "location": "grave",
       "text": "You wave goodbye to the girl. She’s still sniffling but musters a smile before waving back. You hope she doesn’t feel as lonely anymore.",
-      "image": "",
+      "image": "grave",
       "choices": [
         {
           "text": "Next",
@@ -591,9 +586,9 @@
 
     {
       "id": "B-CAMP2",
-      "location": "",
-      "text": "",
-      "image": "",
+      "location": "It's another cold night in the forest. You set up tonight's campfire.",
+      "text": "camp",
+      "image": "campnight",
       "choices": [
         {
           "text": "Search",
@@ -607,9 +602,9 @@
     },
     {
       "id": "B-CAMP2-SEARCH",
-      "location": "",
+      "location": "camp",
       "text": "It appears that someone has been here before. You find a rubber ball. The wolf looks up at you.",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Play",
@@ -619,9 +614,9 @@
     },
     {
       "id": "B-CAMP2-PLAY",
-      "location": "",
+      "location": "camp",
       "text": "You throw the ball and the wolf eagerly runs to bring it back. You repeat this until you both grow weary. The wolf appears to be pleased!",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Sleep",
@@ -631,9 +626,9 @@
     },
     {
       "id": "B-CAMP2-SLEEP",
-      "location": "",
+      "location": "camp",
       "text": "",
-      "image": "",
+      "image": "campnight",
       "choices": [
         {
           "text": "Next",
@@ -645,9 +640,9 @@
 
     {
       "id": "B-MORN2",
-      "location": "",
+      "location": "camp",
       "text": "You close your eyes and drift into a dreamless sleep. The journey has been long and tiring. The wolf huddles up against you. Its warmth is comforting. \n\nYou wake up to loud barking. The wolf is chasing some poor bird from tree to tree. You find yourself curled around the charm the girl had given you. \n\nThe weather is clear and sunny today. You’re almost there.",
-      "image": "",
+      "image": "campday",
       "choices": [
         {
           "text": "Next",
@@ -658,9 +653,9 @@
 
     {
       "id": "B-COTTAGE",
-      "location": "",
-      "text": "",
-      "image": "",
+      "location": "granny",
+      "text": "At last, you’ve arrived at your grandmother’s cottage. The journey was full of trials and tribulations, but you’re here! ",
+      "image": "granny",
       "choices": [
         {
           "text": "Next",
@@ -668,36 +663,11 @@
         }
       ]
     },
-
-    {
-      "id": "BAD-END6",
-      "location": "",
-      "text": "Dead Companion",
-      "image": "",
-      "choices": [
-        {
-          "text": "Retry",
-          "targetNodeId": "INTRO-A"
-        }
-      ]
-    },
-    {
-      "id": "BAD-END7",
-      "location": "",
-      "text": "Bystander",
-      "image": "",
-      "choices": [
-        {
-          "text": "Retry",
-          "targetNodeId": "INTRO-A"
-        }
-      ]
-    },
     {
       "id": "BAD-END8",
-      "location": "",
+      "location": "camp",
       "text": "Disloyal Companion",
-      "image": "",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -707,9 +677,9 @@
     },
     {
       "id": "BAD-END9",
-      "location": "",
+      "location": "camp",
       "text": "Loyal Companion",
-      "image": "",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -719,9 +689,9 @@
     },
     {
       "id": "BAD-END10",
-      "location": "",
+      "location": "cottage",
       "text": "Master's Pet",
-      "image": "",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -731,9 +701,9 @@
     },
     {
       "id": "BAD-END11",
-      "location": "",
+      "location": "cottage",
       "text": "Fairytale Ending",
-      "image": "",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
@@ -743,9 +713,9 @@
     },
     {
       "id": "BAD-END12",
-      "location": "",
+      "location": "woods",
       "text": "Wolf's prey",
-      "image": "",
+      "image": "red",
       "choices": [
         {
           "text": "Retry",
