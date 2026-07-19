@@ -5,10 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public enum GameState
     {
-        Playing,
-        PetCare,
-        EndingsArchive,
-        Settings
+        Playing//,
+        //PetCare,
+        //EndingsArchive,
+        //Settings
     }
 
     // housekeeping
@@ -20,22 +20,22 @@ public class GameManager : MonoBehaviour
 
     // game logic stuff
     public List<int> unlockedEndings = new List<int>();
+    public int food = 0;
     public int morality = 0;
     public int daysNo = 1;
-    public bool hasBranch = false;
+    public bool hasWolf = false;
     public bool hasCharm = false;
 
 
     // panels
     public GameObject gameplayPanel;
-    public GameObject petCarePanel;
-    public GameObject settingsPanel;
-    public GameObject endingsArchivePanel;
+    //public GameObject petCarePanel;
+    //public GameObject settingsPanel;
+    //public GameObject endingsArchivePanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("GameManager Start");
         Instance = this;
         CurrentState = GameState.Playing;
         UpdateUI(CurrentState);
@@ -47,14 +47,15 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void ResetRun()
+    public void ResetRun()
     {
         wolf.Reset();
-        textManager.Reset();
+//        textManager.Reset();
         morality = 0;
         daysNo = 1;
-        hasBranch = false;
+        food = 0;
         hasCharm = false;
+        hasWolf = false;
     }
 
     public void AddEnding(int endingId)
@@ -71,19 +72,13 @@ public class GameManager : MonoBehaviour
         UpdateUI(newState);
     }
 
-    public void GameOver()
-    {
-        ChangeState(GameState.Ending);
-        ResetRun();
-    }
-
     private void UpdateUI(GameState state)
     {
         // disable all panels first
         if (gameplayPanel) gameplayPanel.SetActive(false);
-        if (petCarePanel) petCarePanel.SetActive(false);
-        if (endingsArchivePanel) endingsArchivePanel.SetActive(false);
-        if (settingsPanel) settingsPanel.SetActive(false);
+        //if (petCarePanel) petCarePanel.SetActive(false);
+        //if (endingsArchivePanel) endingsArchivePanel.SetActive(false);
+        //if (settingsPanel) settingsPanel.SetActive(false);
 
         // enable the relevant panel based on the current state
         switch (state)
@@ -91,6 +86,7 @@ public class GameManager : MonoBehaviour
             case GameState.Playing:
                 if (gameplayPanel) gameplayPanel.SetActive(true);
                 break;
+            /*
             case GameState.PetCare:
                 if (petCarePanel) petCarePanel.SetActive(true);
                 break;
@@ -100,6 +96,7 @@ public class GameManager : MonoBehaviour
             case GameState.Settings:
                 if (settingsPanel) settingsPanel.SetActive(true);
                 break;
+                */
         }
     }
 

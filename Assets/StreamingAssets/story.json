@@ -44,11 +44,11 @@
       "choices": [
         {
           "text": "Leave",
-          "targetNodeId": "LEAVE-WOLF"
+          "targetNodeId": "A-START"
         },
         {
           "text": "Help",
-          "targetNodeId": "HELP-WOLF"
+          "targetNodeId": "B-START"
         },
         {
           "text": "Search",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": "LEAVE-WOLF",
+      "id": "A-START",
       "location": "woods",
       "text": "You were raised with responsibility. A wild animal can be dangerous, and its mother is surely nearby.",
       "image": "red",
@@ -69,9 +69,9 @@
       ]
     },
     {
-      "id": "HELP-WOLF",
+      "id": "B-START",
       "location": "woods",
-      "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon",
+      "text": "You were raised with kindness. You gently scoop up the small animal into your basket. You hope it can recover soon.",
       "image": "red"
     },
     {

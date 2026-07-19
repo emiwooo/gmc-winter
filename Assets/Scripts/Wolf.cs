@@ -3,11 +3,13 @@ using UnityEngine.UI;
 
 public class Wolf : MonoBehaviour
 {
+    public GameManager gameManager;
     public AudioManager audioManager;
-    public float hunger = 80f;
+    public float hunger = 60f;
     public float affection = 0f;
 
     public Image imageDisplay;
+    public Sprite noDog;
     public Sprite smallDog;
     public Sprite mediumDog;
     public Sprite largeDogGood;
@@ -20,7 +22,8 @@ public class Wolf : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentImage = smallDog;
+        noDog = Resources.Load<Sprite>("black");
+        currentImage = noDog;
         smallDog = Resources.Load<Sprite>("smallDog");
         mediumDog = Resources.Load<Sprite>("mediumDog");
         largeDogGood = Resources.Load<Sprite>("largeDogGood");
@@ -35,21 +38,35 @@ public class Wolf : MonoBehaviour
 
     public void Reset()
     {
-        hunger = 80f;
+        hunger = 60f;
         affection = 0f;
-        currentImage = smallDog;
+        currentImage = noDog;
     }
 
     public void Feed()
     {
-        hunger = Mathf.Min(hunger + 20f, 100f);
-        audioManager.PlaySound("feed");
+        if (gameManager.food > 0)
+        {
+            gameManager.food--;
+            hunger = Mathf.Min(hunger + 20f, 100f);
+            audioManager.PlaySound("feed");
+        }
     }
 
     public void Pet()
     {
         affection = Mathf.Min(affection + 1f, 100f);
         audioManager.PlaySound("bark");
+    }
+
+    public void AffectionIncrease()
+    {
+        affection = Mathf.Min(affection + 40f, 100f);
+    }
+
+    public void hungry()
+    {
+        hunger = Mathf.Max(hunger - 20f, 0f);
     }
 
     public void UpdateWolfImage()
@@ -64,7 +81,7 @@ public class Wolf : MonoBehaviour
         }
         else if (GameManager.Instance.daysNo == 3)
         {
-            if (GameManager.Instance.morality == -2)
+            if (GameManager.Instance.morality >= -2)
             {
                 currentImage = largeDogEvil;
             }
@@ -73,5 +90,7 @@ public class Wolf : MonoBehaviour
                 currentImage = largeDogGood;
             }
         }
+
+        imageDisplay.sprite = currentImage;
     }
 }

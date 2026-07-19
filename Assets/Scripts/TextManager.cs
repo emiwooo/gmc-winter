@@ -28,6 +28,8 @@ using System.IO;
 public class TextManager : MonoBehaviour
 {
     public AudioManager audioManager;
+    public GameManager gameManager;
+    public Wolf wolf;
     public ScrollRect scrollRect;
     public Image imageDisplay;
     public Transform choicePanelContainer;
@@ -48,7 +50,7 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         LoadStoryData();
-        DisplayNode("1"); 
+        DisplayNode("INTRO-A"); 
     }
 
     void LoadStoryData()
@@ -68,6 +70,45 @@ public class TextManager : MonoBehaviour
     public void DisplayNode(string nodeId)
     {
         if (!storyMap.ContainsKey(nodeId)) return;
+
+        // variable updates based on nodeId
+        if (nodeId == "INTRO-A")
+        {
+            gameManager.ResetRun();
+        } 
+        else if (nodeId == "B-START")
+        {
+            gameManager.hasWolf = true;
+            wolf.UpdateWolfImage();
+        } else if ((nodeId == "B-CAMP-MORN1")||(nodeId == "B-MORN2"))
+        {
+            gameManager.daysNo += 1;
+            wolf.hungry();
+            wolf.UpdateWolfImage();
+        } else if ((nodeId == "A-G-TALK")||(nodeId == "B-G-CHAT"))
+        {
+            gameManager.hasCharm = true;
+        } else if ((nodeId == "B-WM-EAT")||(nodeId == "B-G-EAT"))
+        {
+            gameManager.morality -= 1;
+            wolf.AffectionIncrease();
+            wolf.Feed();
+        } else if (nodeId == "B-CAMP2-PLAY")
+        {
+            if (wolf != null)
+            {
+                wolf.AffectionIncrease();
+            }
+        } else if (nodeId == "B-WM-PROTECT")
+        {
+            if (wolf != null)
+            {
+                wolf.AffectionIncrease();
+            }
+        } else if ((nodeId == "B-CAMP1-SEARCH")||(nodeId == "B-WM-CHAT") || (nodeId == "B-SEARCH"))
+        {
+            gameManager.food += 1;
+        } 
 
         currentNode = storyMap[nodeId];
         StartCoroutine(ClearChoicesNextFrame());
