@@ -54,6 +54,7 @@ public class TextManager : MonoBehaviour
     private string currentLocation = "";
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,6 +87,7 @@ public class TextManager : MonoBehaviour
         if (nodeId == "INTRO-A")
         {
             gameManager.ResetRun();
+            wolf.UpdateWolfImage();
         } 
         else if (nodeId == "B-START")
         {
@@ -103,7 +105,7 @@ public class TextManager : MonoBehaviour
         {
             gameManager.morality -= 1;
             wolf.AffectionIncrease();
-            wolf.Feed();
+            wolf.Eat();
         } else if (nodeId == "B-CAMP2-PLAY")
         {
             if (wolf != null)
@@ -120,7 +122,10 @@ public class TextManager : MonoBehaviour
         {
             gameManager.food += 1;
             gameManager.UpdateFoodUI();
-        } 
+        } else if (nodeId == "BAD-END9")
+        {
+            audioManager.PlaySound("whine");
+        }
 
         currentNode = storyMap[nodeId];
         StartCoroutine(ClearChoicesNextFrame());
@@ -201,7 +206,7 @@ public class TextManager : MonoBehaviour
                 RefreshHistory();
                 if (wolf != null && wolf.hunger <= 0f)
                 {
-                    DisplayNode("BAD-END11");
+                    DisplayNode("BAD-END12");
                 }
                 else
                 {

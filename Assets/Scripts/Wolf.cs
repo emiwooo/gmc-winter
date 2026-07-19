@@ -21,7 +21,7 @@ public class Wolf : MonoBehaviour
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         noDog = Resources.Load<Sprite>("black");
         currentImage = noDog;
@@ -52,39 +52,46 @@ public class Wolf : MonoBehaviour
             gameManager.food--;
             gameManager.UpdateFoodUI();
             hunger = Mathf.Min(hunger + 20f, 100f);
-            audioManager.PlaySound("feed");
+            audioManager.PlaySound("bark");
         }
+    }
+
+    public void Eat()
+    {
+        hunger = Mathf.Min(hunger + 20f, 100f);
+        audioManager.PlaySound("growl");
     }
 
     public void Pet()
     {
-        affection = Mathf.Min(affection + 1f, 100f);
+        affection = Mathf.Min(affection + 2f, 100f);
         audioManager.PlaySound("bark");
     }
 
     public void AffectionIncrease()
     {
-        affection = Mathf.Min(affection + 40f, 100f);
+        affection = Mathf.Min(affection + 20f, 100f);
     }
 
     public void hungry()
     {
-        hunger = Mathf.Max(hunger - 20f, 0f);
+        hunger = Mathf.Max(hunger - 30f, 0f);
     }
 
     public void UpdateWolfImage()
     {
-        if (GameManager.Instance.daysNo == 1)
+        currentImage = noDog;
+        if ((gameManager.daysNo == 1)&&(gameManager.hasWolf == true))
         {
             currentImage = smallDog;
         }
-        else if (GameManager.Instance.daysNo == 2)
+        else if ((gameManager.daysNo == 2)&&(gameManager.hasWolf == true))
         {
             currentImage = mediumDog;
         }
-        else if (GameManager.Instance.daysNo == 3)
+        else if ((GameManager.Instance.daysNo == 3)&&(gameManager.hasWolf == true))
         {
-            if (GameManager.Instance.morality >= -2)
+            if (GameManager.Instance.morality <= -2)
             {
                 currentImage = largeDogEvil;
             }
@@ -93,7 +100,6 @@ public class Wolf : MonoBehaviour
                 currentImage = largeDogGood;
             }
         }
-
         imageDisplay.sprite = currentImage;
     }
 }

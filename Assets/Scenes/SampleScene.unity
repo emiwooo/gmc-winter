@@ -483,6 +483,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1410449833}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &97432211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,6 +2504,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1410449833}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &775435694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3879,9 +3903,9 @@ MonoBehaviour:
   typing1: {fileID: 8300000, guid: f843e8937901f6d42a6b10bc79449087, type: 3}
   typing2: {fileID: 8300000, guid: 341480e27f2da8947b9cca4ea925c2ad, type: 3}
   click: {fileID: 8300000, guid: f843e8937901f6d42a6b10bc79449087, type: 3}
-  bark: {fileID: 0}
-  growl: {fileID: 0}
-  whine: {fileID: 0}
+  bark: {fileID: 8300000, guid: 1ae754280503dca469b8f4b01b58794f, type: 3}
+  growl: {fileID: 8300000, guid: 0a9ffd10e57e4064392c6dc87d678e6b, type: 3}
+  whine: {fileID: 8300000, guid: 364d5a98fc7cdfa43b7971c922fd8690, type: 3}
   bgm1: {fileID: 8300000, guid: 4caf1ab9e294338409c4cdf0bcfb323f, type: 3}
   audioSource: {fileID: 1885434266}
 --- !u!1 &1463599224
@@ -4006,6 +4030,18 @@ MonoBehaviour:
       - m_Target: {fileID: 508758340}
         m_TargetAssemblyTypeName: Wolf, Assembly-CSharp
         m_MethodName: Pet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1410449833}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

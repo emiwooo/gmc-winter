@@ -39,12 +39,17 @@ public class GameManager : MonoBehaviour
     //public GameObject settingsPanel;
     //public GameObject endingsArchivePanel;
 
+    void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instance = this;
         CurrentState = GameState.Playing;
         UpdateUI(CurrentState);
+        UpdateFoodUI();
     }
 
     // Update is called once per frame
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
         food = 0;
         hasCharm = false;
         hasWolf = false;
+        UpdateFoodUI();
     }
 
     public void AddEnding(int endingId)
