@@ -212,6 +212,7 @@ public class TextManager : MonoBehaviour
                 if (wolf != null && wolf.hunger <= 0f)
                 {
                     DisplayNode("BAD-END12");
+                    wolf.hunger = 60f;
                 }
                 else
                 {
